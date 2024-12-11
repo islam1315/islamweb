@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة المبيعات والفاتورة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>حاسبة المبيعات والفاتورة</h1>
+    </header>
+
+    <main>
+        <!-- اختيار الولاية -->
+        <section class="state-selection">
+            <h2>اختيار الولاية</h2>
+            <select id="state-selector">
+                <!-- إضافة جميع ولايات الجزائر -->
+                <option value="01">01 الجزائر</option>
+                <option value="02">02 الشلف</option>
+                <option value="03">03 الأغواط</option>
+                <option value="04">04 أم البواقي</option>
+                <option value="05">05 باتنة</option>
+                <option value="06">06 بجاية</option>
+                <option value="07">07 بسكرة</option>
+                <option value="08">08 بشار</option>
+                <option value="09">09 البليدة</option>
+                <option value="10">10 البويرة</option>
+                <option value="11">11 تمنراست</option>
+                <option value="12">12 تبسة</option>
+                <option value="13">13 تلمسان</option>
+                <option value="14">14 تيارت</option>
+                <option value="15">15 تيزي وزو</option>
+                <option value="16">16 الجزائر العاصمة</option>
+                <option value="17">17 الجلفة</option>
+                <option value="18">18 جيجل</option>
+                <option value="19">19 سطيف</option>
+                <option value="20">20 سعيدة</option>
+                <option value="21">21 سكيكدة</option>
+                <option value="22">22 سيدي بلعباس</option>
+                <option value="23">23 عنابة</option>
+                <option value="24">24 قالمة</option>
+                <option value="25">25 قسنطينة</option>
+                <option value="26">26 المدية</option>
+                <option value="27">27 مستغانم</option>
+                <option value="28">28 المسيلة</option>
+                <option value="29">29 معسكر</option>
+                <option value="30">30 ورقلة</option>
+                <option value="31">31 وهران</option>
+                <option value="32">32 البيض</option>
+                <option value="33">33 إليزي</option>
+                <option value="34">34 برج بوعريريج</option>
+                <option value="35">35 بومرداس</option>
+                <option value="36">36 الطارف</option>
+                <option value="37">37 تندوف</option>
+                <option value="38">38 تسمسيلت</option>
+                <option value="39">39 الوادي</option>
+                <option value="40">40 خنشلة</option>
+                <option value="41">41 سوق أهراس</option>
+                <option value="42">42 تيبازة</option>
+                <option value="43">43 ميلة</option>
+                <option value="44">44 عين الدفلى</option>
+                <option value="45">45 النعامة</option>
+                <option value="46">46 عين تموشنت</option>
+                <option value="47">47 غرداية</option>
+                <option value="48">48 غليزان</option>
+                <option value="49">49 برج باجي مختار</option>
+                <option value="50">50 بني عباس</option>
+                <option value="51">51 أولاد جلال</option>
+                <option value="52">52 إن صالح</option>
+                <option value="53">53 إن قزام</option>
+                <option value="54">54 توقرت</option>
+                <option value="55">55 جانت</option>
+                <option value="56">56 المغير</option>
+                <option value="57">57 المنيعة</option>
+            </select>
+            <button onclick="addPerson()">إضافة اسم شخص</button>
+        </section>
+
+        <!-- عرض الأسماء -->
+        <section class="state-persons">
+            <h2>أسماء الأشخاص حسب الولاية</h2>
+            <ul id="persons-list">
+                <!-- سيتم عرض الأسماء هنا -->
+            </ul>
+        </section>
+
+        <!-- الحاسبة -->
+        <section class="calculator">
+            <h2>حاسبة المبيعات</h2>
+            <form id="calculator-form">
+                <label for="sales-count">عدد المبيعات:</label>
+                <input type="number" id="sales-count" placeholder="أدخل عدد المبيعات" required>
+
+                <label for="price-per-item">ثمن المبيعة الواحدة (دينار):</label>
+                <input type="number" id="price-per-item" placeholder="أدخل ثمن المبيعة الواحدة" required>
+
+                <label for="payment">مبلغ التسديد (دينار):</label>
+                <input type="number" id="payment" placeholder="أدخل مبلغ التسديد" required>
+
+                <label for="remaining">المبلغ المتبقي (دينار):</label>
+                <input type="number" id="remaining" placeholder="أدخل المبلغ المتبقي" required>
+
+                <button type="button" onclick="calculate()">احسب</button>
+            </form>
+        </section>
+
+        <!-- الفاتورة -->
+        <section class="invoice" id="invoice-section" style="display: none;">
+            <h2>الفاتورة</h2>
+            <div id="invoice-content">
+                <!-- سيتم عرض الفاتورة هنا -->
+            </div>
+            <button onclick="printInvoice()">طباعة الفاتورة</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
